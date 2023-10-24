@@ -27,11 +27,11 @@
             echo"<td>" . $uneIntervention['idtech'] ."</td>";
             echo"<td>";
             echo"<a 
-                href ='index.php?page=3&action=supp&idprofesseur=".$uneIntervention['idinter']."'><img src='images/technicien.png' 
+                href ='index.php?page=4&action=supp&idprofesseur=".$uneIntervention['idinter']."'><img src='images/technicien.png' 
                 height='30' width='30'></a>";
 
             echo"<a 
-                href ='index.php?page=3&action=edit&idprofesseur=".$uneIntervention['idinter']."'><img src='images/editer.png' 
+                href ='index.php?page=4&action=edit&idprofesseur=".$uneIntervention['idinter']."'><img src='images/editer.png' 
                 height='30' width='30'></a>";
 
 
