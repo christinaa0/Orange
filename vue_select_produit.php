@@ -26,7 +26,7 @@
             echo "<td>" . $unproduit['idclient'] ."</td>";
             echo "<td>";
             echo "<a href='index.php?page=3&action=sup&idproduit=".$unproduit['idproduit']."'><img src='images/supprimer.png' height='30' width='30'></a>";
-            echo "<a href='index.php?page=3&action=edit&idproduit=".$unclient['idproduit']."'><img src='images/editer.png' height='30' width='30'></a>";
+            echo "<a href='index.php?page=3&action=edit&idproduit=".$leproduit['idproduit']."'><img src='images/editer.png' height='30' width='30'></a>";
             echo "</td>";
             echo"</td>";
         }
