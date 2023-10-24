@@ -1,21 +1,21 @@
-<h3> Ajout d'un nouveau client </h3>
+<h3> Ajout d'un nouveau produit </h3>
 <form method="post">
     <table>
         <tr>
             <td> designation :</td>
-            <td> <input type="text" name="designation" value="<?= ($leclient !=null) ? $leclient['designation'] : ''?>"></td>
+            <td> <input type="text" name="designation" value="<?= ($leproduit !=null) ? $leproduit['designation'] : ''?>"></td>
         </tr>
         <tr>
             <td> prixAchat:</td>
-            <td> <input type="text" name="prixAchat"value="<?= ($leclient !=null) ? $leclient['prixAchat'] : ''?>"></td>
+            <td> <input type="text" name="prixAchat"value="<?= ($leproduit !=null) ? $leproduit['prixAchat'] : ''?>"></td>
         </tr>
         <tr>
             <td> Etat :</td>
-            <td> <input type="text" name="etat"value="<?= ($leclient !=null) ? $leclient['etat'] : ''?>"></td>
+            <td> <input type="text" name="etat"value="<?= ($leproduit !=null) ? $leproduit['etat'] : ''?>"></td>
         </tr>
         <tr>
             <td>dateAchat :</td>
-            <td> <input type="text" name="dateAchat"value="<?= ($leclient !=null) ? $leclient['dateAchat'] : ''?>"></td>
+            <td> <input type="text" name="dateAchat"value="<?= ($leproduit !=null) ? $leproduit['dateAchat'] : ''?>"></td>
         </tr>
        
         <td> le client :</td>
@@ -36,11 +36,11 @@ foreach ($lesclients as $unclient) {
         <td> </td>
         <td> <input type="reset" name="Annuler" value="Annuler">
         <input type="submit"
-        <?=($leclient !=null) ? ' name="Modifier" value="Modifier"':'
+        <?=($leproduit !=null) ? ' name="Modifier" value="Modifier"':'
          name="Valider" value="Valider" ' ?>
          >
         </td>
          
-         <?=($leclient !=null) ? '<input type="hidden" name="idproduit" value="'.$leclient['idproduit'].'">' : ' '?>"></td>
+         <?=($leproduit !=null) ? '<input type="hidden" name="idproduit" value="'.$leproduit['idproduit'].'">' : ' '?>"></td>
     </table>
 </form>
