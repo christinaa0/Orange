@@ -15,28 +15,27 @@
 <body>
     <Center>
     <h1>  Bienvenue chez Orange</h1>
-<br>
-<br>
 
     <a href="index.php?page=1">
-        <img src="img/home.png" height="100" width="150"></a>
+        <img src="img/home.png" height="50" width="70"></a>
 
         <a href="index.php?page=2">
-        <img src="img/client.png" height="100" width="100"></a>
+        <img src="img/client.png" height="50" width="50"></a>
 
         <a href="index.php?page=3">
-        <img src="img/produit.png" height="100" width="100"></a>
+        <img src="img/produit.png" height="50" width="50"></a>
 
         <a href="index.php?page=4">
-        <img src="img/technicien.png" height="100" width="100"></a>
+        <img src="img/technicien.png" height="50" width="50"></a>
 
         <a href="index.php?page=5">
-        <img src="img/intervention.png" height="100" width="100"></a>
+        <img src="img/intervention.png" height="50" width="50"></a>
 
 
 
         </Center>
 
+        <h2>Les offres du moments</h2>
         <?php 
         
         
@@ -50,10 +49,7 @@
 
          switch ($page){
             case 1 : require_once ("home.php"); break;
-            case 2 : require_once ("gestion_clients.php"); break;
-            case 3 : require_once ("gestion_produit.php"); break;
-            case 4 : require_once ("gestion_techniciens.php"); break;
-            case 5 : require_once ("gestion_interventions.php"); break;
+           
             default : require_once ("erreur.php"); break;
          }
         ?>
