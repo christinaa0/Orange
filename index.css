@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Oswald:wght@500&display=swap');
+
+
+
+
+
+body {
+    background-color: rgb(255, 239, 235);
+    
+}
+
+h1{
+    font-size: 500%;
+    font-family: 'oswald', sans-serif;
+    text-align: center;
+    color: rgb(210, 68, 66);
+    
+}
+
+
+p{
+    font-size: 110%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    color: rgb(111, 84, 84);
+    margin-left: 10%;
+    margin-right: 10%;
+
+}
+
+h2{
+    font-size: 400%;
+    font-family: 'oswald', sans-serif;
+    text-align: center;
+    color: rgb(210, 68, 66);
+
+
+}
+.container {
+    display: flex;
+    border: 3px solid;
+    border-color:rgb(210, 68, 66) ;
+  }
+
+
+  .section1, .section2 {
+   
+  }
+  
+  
+
+
+  
+.sec2  {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 7%;
+  margin-right: 20%;
+  
+}
+
+.sec1
+
+    {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-left: 7%;
+        margin-right: 20%;
+        margin-top: 15%;
+      }
+
+
+  
+  /* Styles pour les inputs */
+  input[type="date"],
+  input[type="time"] {
+    font-size: 150%;
+    padding: 1em;
+    outline: none;
+    border: 2px solid rgb(205, 129, 129);
+    background-color: transparent;
+    
+    width: 100%;
+  }
+  
+  
+
+
+  /* Styles pour les sections */
+.sec1, .sec2 {
+    margin-bottom: 20px;
+  }
+  
+  /* Styles pour les titres h3 */
+  .sec1 h3, .sec2 h3 {
+    color: rgb(210, 68, 66);
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+  }
+  
+  /* Styles pour les div contenant les labels et les inputs */
+  .sec1 div, .sec2 div {
+    margin-bottom: 10px;
+  }
+  
+  /* Styles pour les labels */
+  .sec1 label, .sec2 label {
+    display: block;
+    font-size: 20px;
+    color: #db6c6c;
+    margin-bottom: 10px;
+  }
+  
+  /* Styles pour les inputs */
+  .sec1 input[type="date"],
+  .sec1 input[type="time"],
+  .sec2 input[type="date"],
+  .sec2 input[type="time"] {
+    width: 200px;
+    padding: 15px;
+    font-size: 16px;
+    border: 1px solid #f88888;
+    border-radius: 4px;
+  }
+  
+  /* Styles pour les inputs de type "time" */
+  .sec1 input[type="time"],
+  .sec2 input[type="time"] {
+    width: 120px;
+  }
+  
+  /* Styles pour les inputs de type "submit" */
+  input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+
+
+  .btnn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    background-color: #ef6c6c;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-left: 40%;
+    margin-top: 6%;
+  }
+  
+  .btnn:hover {
+    background-color: #393131;
+  }
+  

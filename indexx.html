@@ -1,0 +1,78 @@
+
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculateur de Milieu de Vacances</title>
+</head>
+<body>
+    <h1>Calculateur de Milieu de Vacances</h1>
+
+    <label for="zones">Zone :</label>
+    <select id="zones" name="zones">
+        <option value="A">Zone A</option>
+        <option value="B">Zone B</option>
+        <option value="C">Zone C</option>
+    </select>
+
+    <label for="description">Type de Vacances :</label>
+    <select id="description" name="description">
+        <option value="Vacances de Printemps">Vacances de Printemps</option>
+        <option value="Vacances de Noël">Vacances de Noël</option>
+        <option value="Vacances de Pâques">Vacances de Pâques</option>
+    </select>
+
+    <label for="annee_scolaire">Année Scolaire :</label>
+    <input type="text" id="annee_scolaire" name="annee_scolaire" placeholder="Ex. 2021-2022">
+
+    <button id="calculer">Calculer</button>
+
+    <div id="resultat"></div>
+
+    <script>
+
+console.log('Zone:', zones);
+console.log('Description:', description);
+console.log('Année scolaire:', annee_scolaire);
+       document.getElementById('calculer').addEventListener('click', function() {
+    var zone = document.getElementById('zones').value;
+    var description = document.getElementById('description').value;
+    var annee_scolaire = document.getElementById('annee_scolaire').value;
+
+            // Données fournies
+            var data = {
+                "total_count": 101,
+                "results": [
+                {"description": "Vacances de Printemps",  "start_date": "2018-04-20T22:00:00+00:00", "end_date": "2018-05-06T22:00:00+00:00", "location": "Aix-Marseille", "zones": "Zone B", "annee_scolaire": "2017-2018"},
+            {"description": "Vacances de Printemps",  "start_date": "2019-04-05T22:00:00+00:00", "end_date": "2019-04-22T22:00:00+00:00", "location": "Aix-Marseille", "zones": "Zone B", "annee_scolaire": "2018-2019"},
+            {"description": "Vacances de Printemps",  "start_date": "2020-04-10T22:00:00+00:00", "end_date": "2020-04-26T22:00:00+00:00", "location": "Aix-Marseille", "zones": "Zone B", "annee_scolaire": "2019-2020"},
+            {"description": "Vacances de Printemps", "start_date": "2021-04-09", "end_date": "2021-04-25", "location": "Aix-Marseille", "zones": "Zone B", "annee_scolaire": "2020-2021"},
+            {"description": "Vacances de Printemps", "start_date": "2022-04-08T22:00:00+00:00", "end_date": "2022-04-24T22:00:00+00:00", "zones": "Zone B", "annee_scolaire": "2021-2022"},
+            {"description": "Vacances de Printemps",  "start_date": "2023-04-14T22:00:00+00:00", "end_date": "2023-05-01T22:00:00+00:00", "location": "Aix-Marseille", "zones": "Zone B", "annee_scolaire": "2022-2023"},
+            {"description": "Vacances de Printemps",  "start_date": "2024-04-19T22:00:00+00:00", "end_date": "2024-05-05T22:00:00+00:00", "location": "Aix-Marseille", "zones": "Zone B", "annee_scolaire": "2023-2024"},
+            {"description": "Vacances de Printemps",  "start_date": "2025-04-04T22:00:00+00:00", "end_date": "2025-04-21T22:00:00+00:00", "location": "Aix-Marseille", "zones": "Zone B", "annee_scolaire": "2024-2025"},
+            {"description": "Vacances de Printemps", "start_date": "2026-04-10T22:00:00+00:00", "end_date": "2026-04-26T22:00:00+00:00", "location": "Aix-Marseille", "zones": "Zone B", "annee_scolaire": "2025-2026"}
+        ]
+                
+            };
+
+            var selectedData = data.results.find(function(item) {
+                return item.zones === zones && item.description === description && item.annee_scolaire === annee_scolaire;
+            });
+
+            if (selectedData) {
+                var startDate = new Date(selectedData.start_date);
+                var endDate = new Date(selectedData.end_date);
+
+                var milieuDesVacances = new Date(startDate.getTime() + (endDate.getTime() - startDate.getTime()) / 2);
+
+                document.getElementById('resultat').textContent = 'Le milieu des vacances est le ' + milieuDesVacances.toISOString().substr(0, 10);
+            } else {
+                document.getElementById('resultat').textContent = 'Aucune donnée trouvée pour les vacances, la zone et l\'année scolaire sélectionnées.';
+            }
+        });
+    </script>
+</body>
+</html>
