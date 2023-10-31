@@ -25,7 +25,7 @@ if(isset($_GET['action'])&& isset($_GET['idproduit'])){
 
     }else{
     //recuperation de toutes les classes
-    $lesClasses = $unControleur->selectAllProduit();
+    $lesProduits = $unControleur->selectAllProduit();
     }
     require_once ("vue/vue_select_produit.php");
 ?>
