@@ -1,7 +1,7 @@
 <center>
     <h2>GESTION DES TECHNICIENS</h2>
     <?php
-    $lesClasses= $unControleur->selectAllClasses();
+    $lesProduits= $unControleur->selectAllProduits();
 
     $letechnicien=null;
     if (isset($_GET['action']) && isset($_GET['idtech'])) {
