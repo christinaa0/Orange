@@ -51,3 +51,16 @@ create table intervention (
 
 
 );
+
+create table user (
+    iduser int(3) not null auto_increment,
+    nom varchar(50),
+    prenom varchar(50),
+    email varchar(50),
+    mdp varchar(250),
+    role enum("user", "admin"),
+    primary key (iduser)
+);
+
+
+
