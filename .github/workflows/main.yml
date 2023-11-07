@@ -12,6 +12,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - name: Set Git Author Identity
+        run: |
+          git config user.email "christina.gapy@gmail.com"
+          git config user.name "christinaa0"
+        working-directory: ${{ github.workspace }}
+
       - name: Remove files
         run: |
           rm -rf my-directory/*
@@ -19,3 +25,4 @@ jobs:
           git commit -m "Remove all files in my-directory"
           git push
         working-directory: ${{ github.workspace }}
+
