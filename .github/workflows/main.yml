@@ -1,0 +1,21 @@
+name: Clear Directory
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  clear-directory:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Remove files
+        run: |
+          rm -rf my-directory/*
+          git add -A
+          git commit -m "Remove all files in my-directory"
+          git push
+        working-directory: ${{ github.workspace }}
