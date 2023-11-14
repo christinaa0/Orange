@@ -21,7 +21,7 @@
             <td> <select name="idclient">
                 <?php
 foreach ($lesclients as $unclient) {
-    echo "<option value ='" . $unclient['nom'] . "'>";
+    echo "<option value ='" . $unclient['idclient'] . "'>";
     echo $unclient['nom'];
     echo"</option>";
 }

@@ -37,10 +37,10 @@
             </tr>
             <tr>
                 <td> Technicien :</td>
-                <td> <select name="idtechnicien">
+                <td> <select name="idtech">
                         <?php
                         foreach ($lestechniciens as $untechnicien){
-                            echo "<option value ='".$untechnicien['idtechnicien']."'>";
+                            echo "<option value ='".$untechnicien['idtech']."'>";
                             echo $untechnicien['nom'];
                             echo"</option>";
                         }
@@ -58,7 +58,7 @@
 
         </td>
          
-         <?=($lIntervention !=null) ? '<input type="hidden" name="idnter" value="'.$lIntervention['idinter'].'">' : ' '?></td>
+         <?=($lIntervention !=null) ? '<input type="hidden" name="idinter" value="'.$lIntervention['idinter'].'">' : ' '?></td>
         </table>
 
     </form>

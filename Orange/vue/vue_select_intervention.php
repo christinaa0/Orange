@@ -29,24 +29,21 @@ if(isset($_SESSION['role']) && $_SESSION['role']=='admin'){
             echo"<td>" . $uneIntervention['prixinter'] ."</td>";
             echo"<td>" . $uneIntervention['rapport'] ."</td>";
             echo"<td>" . $uneIntervention['idproduit'] ."</td>";
-            echo"<td>" . $uneIntervention['idtechnicien'] ."</td>";
+            echo"<td>" . $uneIntervention['idtech'] ."</td>";
             
 if(isset($_SESSION['role']) && $_SESSION['role']=='admin'){
 
-            echo"<td>";
-            echo"<a 
-                href ='index.php?page=5&action=supp&idprofesseur=".$uneIntervention['idinter']."'><img src='images/supprimer.png' 
-                height='30' width='30'></a>";
+           
+                echo "<td>";
+                echo "<a href='index.php?page=5&action=sup&idinter=".$uneIntervention['idinter']."'><img src='images/supprimer.png' height='30' width='30'></a>";
+                echo "<a href='index.php?page=5&action=edit&idinter=".$uneIntervention['idinter']."'><img src='images/editer.png' height='30' width='30'></a>";
+                echo "</td>";
+                echo"</td>";
 
-            echo"<a 
-                href ='index.php?page=5&action=edit&idprofesseur=".$uneIntervention['idinter']."'><img src='images/editer.png' 
-                height='30' width='30'></a>";
+         echo"</td>";
+           echo"</tr>";
 
-
-            echo"</td>";
-            echo"</tr>";
-
-        }
+      }
     
     }
     }

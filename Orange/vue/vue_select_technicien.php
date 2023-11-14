@@ -21,7 +21,7 @@ if(isset($_SESSION['role']) && $_SESSION['role']=='admin'){
     if (isset($lestechniciens)){
         foreach ($lestechniciens as $untechnicien){
             echo "<tr>";
-            echo "<td>" . $untechnicien['idtechnicien'] ."</td>";
+            echo "<td>" . $untechnicien['idtech'] ."</td>";
             echo "<td>" . $untechnicien['nom'] ."</td>";
             echo "<td>" . $untechnicien['prenom'] ."</td>";
             echo "<td>" . $untechnicien['qualification'] ."</td>";
@@ -30,8 +30,8 @@ if(isset($_SESSION['role']) && $_SESSION['role']=='admin'){
 if(isset($_SESSION['role']) && $_SESSION['role']=='admin'){
 
             echo "<td>";
-            echo "<a href='index.php?page=4&action=sup&idclasse=".$untechnicien['idtechnicien']."'><img src='images/supprimer.png' height='30' width='30'></a>";
-            echo "<a href='index.php?page=4&action=edit&idclasse=".$untechnicien['idtechicien']."'><img src='images/editer.png' height='30' width='30'></a>";
+            echo "<a href='index.php?page=4&action=sup&idtech=".$untechnicien['idtech']."'><img src='images/supprimer.png' height='30' width='30'></a>";
+            echo "<a href='index.php?page=4&action=edit&idtech=".$untechnicien['idtech']."'><img src='images/editer.png' height='30' width='30'></a>";
             echo "</td>";
             echo"</td>";
         }

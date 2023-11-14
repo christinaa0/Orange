@@ -68,16 +68,17 @@ class Modele {
 
 
     /***************** GESTION DES PRODUITS ******************/
-    public function insertProduit($tab){
-        $requete = "insert into produit values (null, :designation, :prixAchat, :etat, :dateAchat,:idclient);";
-        $donnees = array(":designation" => $tab['designation'],
-                ":prixAchat"=>$tab["prixAchat"],
-                ":etat"=>$tab["etat"],
-                ":dateAchat"=> $tab ["dateAchat"],
-                ":idclient"=> $tab ["idclient"]);
-        $select = $this->unPDO->prepare ($requete);
-        $select -> execute ($donnees);
-    }
+   
+        public function insertProduit($tab){
+            $requete = "insert into produit values (null, :designation, :prixachat, :etat, :dateachat,:idclient);";
+            $donnees = array(":designation" => $tab['designation'],
+                    ":prixachat"=>$tab["prixachat"],
+                    ":etat"=>$tab["etat"],
+                    ":dateachat"=> $tab ["dateachat"],
+                    ":idclient"=> $tab ["idclient"]);
+            $select = $this->unPDO->prepare ($requete);
+            $select -> execute ($donnees);
+        }
 
     public function selectAllProduit (){
         $requete = "Select * from produit ;";
@@ -107,7 +108,8 @@ class Modele {
             ":prixachat"=>$tab["prixachat"],
             ":etat"=>$tab["etat"],
             ":dateachat"=> $tab ["dateachat"],
-            ":idclient"=> $tab ["idclient"]);
+            ":idclient"=> $tab ["idclient"],
+            ":idproduit" => $tab["idproduit"] );
         $select = $this->unPDO->prepare ($requete);
         $select -> execute($donnees);
     }
@@ -124,7 +126,7 @@ class Modele {
     
     
     public function insertTechnicien ($tab){
-        $requete = "insert into technicien values (null, :nom, :prenom,:qualification,:email);";
+        $requete = "insert into technicien (nom, prenom, qualification, email) VALUES (:nom, :prenom, :qualification, :email);";
         $donnees = array(":nom" => $tab['nom'],
             ":prenom"=>$tab["prenom"],
             ":qualification"=>$tab["qualification"],
@@ -140,28 +142,29 @@ class Modele {
         return $select->fetchAll ();
 
     }
-    public function deleteTechnicien($idtechnicien){
-        $requete = "Delete from technicien where idtechnicien = :idtechnicien;";
-        $donnees = array(":idtechnicien" =>$idtechnicien);
+    public function deleteTechnicien($idtech){
+        $requete = "Delete from technicien where idtech = :idtech;";
+        $donnees = array(":idtech" =>$idtech);
         $select = $this->unPDO->prepare ($requete);
         $select -> execute ($donnees);
     }
 
 
-    public function selectWhereTechnicien($idtechnicien){
-        $requete = "Select * from technicien where idtechnicien =:idtechnicien;";
-        $donnees = array(":idtechnicien" =>$idtechnicien);
+    public function selectWhereTechnicien($idtech){
+        $requete = "Select * from technicien where idtech =:idtech;";
+        $donnees = array(":idtech" =>$idtech);
         $select = $this->unPDO->prepare ($requete);
         $select -> execute ($donnees);
         return $select->fetch();
     }
 
     public function updateTechnicien($tab){
-        $requete = "update technicien set nom=:nom, prenom = :prenom,qualification = :qualification, email= :email where idtechnicien =:idtechnicien";
+        $requete = "update technicien set nom=:nom, prenom = :prenom,qualification = :qualification, email= :email where idtech =:idtech";
         $donnees = array(":nom" => $tab['nom'],
             ":prenom"=>$tab["prenom"],
-            ":idtechnicien"=> $tab ["idtechnicien"],
-            ":email"=>$tab["email"]);
+            ":qualification"=> $tab ["qualification"],
+            ":email"=>$tab["email"],
+            ":idtech"=> $tab ["idtech"],);
         $select = $this->unPDO->prepare ($requete);
         $select -> execute($donnees);
     }
@@ -178,12 +181,12 @@ class Modele {
 
     /***************** GESTION DES INTERVENTION ******************/
     public function insertIntervention($tab){
-        $requete = "insert into intervention values (null, :dateinter, :prixinter, :rapport, :idproduit,:idtechnicien);";
+        $requete = "insert into intervention values (null, :dateinter, :prixinter, :rapport, :idproduit,:idtech);";
         $donnees = array(":dateinter" => $tab['dateinter'],
             ":prixinter"=>$tab["prixinter"],
             ":rapport"=>$tab["rapport"],
             ":idproduit"=> $tab ["idproduit"],
-            ":idtechnicien"=> $tab ["idtechnicien"]);
+            ":idtech"=> $tab ["idtech"]);
         $select = $this->unPDO->prepare ($requete);
         $select -> execute ($donnees);
     }
@@ -196,7 +199,7 @@ class Modele {
 
     }
     public function deleteIntervention($idinter){
-        $requete = "Delete from intervention where idintervention = :idinter;";
+        $requete = "Delete from intervention where idinter = :idinter;";
         $donnees = array(":idinter" =>$idinter);
         $select = $this->unPDO->prepare ($requete);
         $select -> execute ($donnees);
@@ -212,7 +215,9 @@ class Modele {
 
     public function updateIntervention($tab){
         $requete = "update intervention set dateinter=:dateinter, prixinter = :prixinter,rapport= :rapport, idproduit = :idproduit, idtech = :idtech where idinter=:idinter";
-        $donnees = array(":dateinter" => $tab['dateinter'],
+        $donnees = array(
+            ":idinter" => $tab["idinter"],
+        ":dateinter" => $tab["dateinter"],
             ":prixinter"=>$tab["prixinter"],
             ":rapport"=>$tab["rapport"],
             ":idproduit"=> $tab ["idproduit"],
